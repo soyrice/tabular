@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="./favicon.ico">
+
+    <title>tabular - review GIS field calculations</title>
+
+    <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="./css/base.css" rel="stylesheet">
+    <link href="./css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body class="homepage" >
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!---->
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!---->
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="."><h10>tabular</h10></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!---->
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                <!---->
+                    <li class="active">
+                        <a href=".">Docs</a>
+                    </li>
+                <!---->
+                
+                <!---->
+                    <li >
+                        <a href="sandbox/">Sandbox</a>
+                    </li>
+                <!---->
+                
+                </ul>
+            <!---->
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <!--
+                    <li class="disabled">
+                        <a rel="next" >
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="sandbox/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                -->
+                <li>
+                    <a href="https://github.com/soyrice"><i class="fa fa-github"></i> Github</a>
+                </li>
+                <!---->
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#get-started">Get started</a></li>
+        
+    
+        <li class="first-level "><a href="#edit-some-text">Edit some text</a></li>
+        
+            <li class="second-level"><a href="#find-characters">Find characters</a></li>
+            
+        
+            <li class="second-level"><a href="#remove-characters">Remove characters</a></li>
+            
+        
+            <li class="second-level"><a href="#format-the-string">Format the string</a></li>
+            
+        
+    
+        <li class="first-level "><a href="#do-some-math">Do some math</a></li>
+        
+            <li class="second-level"><a href="#add-and-subtract">Add and subtract</a></li>
+            
+        
+            <li class="second-level"><a href="#multiply-and-divide">Multiply and divide</a></li>
+            
+        
+            <li class="second-level"><a href="#execute-simple-functions">Execute simple functions</a></li>
+            
+        
+    
+        <li class="first-level "><a href="#deal-with-geometries">Deal with geometries</a></li>
+        
+            <li class="second-level"><a href="#find-feature-extents">Find feature extents</a></li>
+            
+        
+            <li class="second-level"><a href="#calculate-line-lengths">Calculate line lengths</a></li>
+            
+        
+            <li class="second-level"><a href="#compute-shape-areas">Compute shape areas</a></li>
+            
+        
+    
+        <li class="first-level "><a href="#further-reading">Further reading</a></li>
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1>Basic Field Calculations <small> for ArcGIS&reg;</small></h1>
+
+<p><img alt="license mit" src="https://img.shields.io/packagist/l/doctrine/orm.svg" /> <a href="https://github.com/soyrice/tabular/issues"><img alt="contributions welcome" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" /></a></p>
+<h2 id="get-started">Get started</h2>
+<p>Tabular is an unofficial, interactive manual for the <a href="http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/calculate-field.htm">Calculate Field</a> tool in ArcGIS Desktop. Tabular is designed for new GIS and Python users to learn scripting for spatial analysis.</p>
+<p>You can copy-and-paste Python expressions into ArcGIS, navigate through the tool with screenshots, and test your code in Python sandboxes. Or you can download <a href="">the cheat sheet</a>.</p>
+<h2 id="edit-some-text">Edit some text</h2>
+<hr />
+<h3 id="find-characters">Find characters</h3>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th><h7>Code snippet<h8>------------------------------------------------------------------</h8><h7></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Return the first character</td>
+<td><details><summary><code>!fieldname![0]</code></summary><img src="/images/1.png";></details></td>
+</tr>
+<tr>
+<td>Return the first through third characters</td>
+<td><details><summary><code>!fieldname![0:3]</code></summary><img src="/images/2.png";></details></td>
+</tr>
+<tr>
+<td>Return the second-to-last character</td>
+<td><details><summary><code>!fieldname![-2]</code></summary><img src="/images/3.png";></details></td>
+</tr>
+</tbody>
+</table>
+<h3 id="remove-characters">Remove characters</h3>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>Code snippet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Remove all whitespace</td>
+<td><details><summary><code>!fieldname!.rstrip()</code></summary><img src="/images/4.png";></details></td>
+</tr>
+<tr>
+<td>Swap certain words</td>
+<td><details><summary><code>!fieldname!.replace("value", "New Value")</code></summary><img src="/images/5.png";></details></td>
+</tr>
+<tr>
+<td>Remove all non-alphanumeric characters</td>
+<td><details><summary><code>‘’.join(ch for ch in !fieldname! if ch.isalnum())</code></summary><img src="/images/6.png";></details></td>
+</tr>
+<tr>
+<td>Return <code>&lt;Null&gt;</code></td>
+<td><details><summary><code>"None"</code></summary><img src="/images/7.png";></details></td>
+</tr>
+</tbody>
+</table>
+<h3 id="format-the-string">Format the string</h3>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th><h7>Code snippet<h8>-----------------------------------------------</h8><h7></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Capitalize the string</td>
+<td><details><summary><code>!fieldname!.capitalize()</code></summary><img src="/images/8.png";></details></td>
+</tr>
+<tr>
+<td>Convert the string to lowercase</td>
+<td><details><summary><code>!fieldname!.lower()</code></summary><img src="/images/9.png";></details></td>
+</tr>
+<tr>
+<td>Convert the string to all caps</td>
+<td><details><summary><code>!fieldname!.upper()</code></summary><img src="/images/10.png";></details></td>
+</tr>
+</tbody>
+</table>
+<h2 id="do-some-math">Do some math</h2>
+<hr />
+<h3 id="add-and-subtract">Add and subtract</h3>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th><h7>Code snippet<h8>--------------------------------------------</h8><h7></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add 5 to the field value</td>
+<td><details><summary><code>!fieldname! + 5</code></summary><img src="/images/11.png";></details></td>
+</tr>
+<tr>
+<td>Subtract 6 from the field value</td>
+<td><details><summary><code>!fieldname! - 6</code></summary><img src="/images/12.png";></details></td>
+</tr>
+</tbody>
+</table>
+<h3 id="multiply-and-divide">Multiply and divide</h3>
+<table>
+<thead>
+<tr>
+<th>Goal<h8>--------------------------------------</h8></th>
+<th><h7>Code snippet<h8>--------------------------------------------</h8><h7></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multiply by 2</td>
+<td><details><summary><code>!fieldname! * 2</code></summary><img src="/images/13.png";></details></td>
+</tr>
+<tr>
+<td>Divide by 3</td>
+<td><details><summary><code>!fieldname! / 3</code></summary><img src="/images/14.png";></details></td>
+</tr>
+</tbody>
+</table>
+<h3 id="execute-simple-functions">Execute simple functions</h3>
+<p>In the Field Calculator, you can execute <h9><span style="background-color: #e3d9de">anything listed under <a href="http://teachmegis.com/tiptricks/Editing%20Tables%20with%20the%20Field%20Calculator.pdf">Functions:</a></span> or <span style="background-color: lightyellow">any <a href="https://docs.python.org/2/library/functions.html">built-in Python functions</a></span>.</p>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th><h7>Code snippet<h8>---------------------------------</h8><h7></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="background-color: #e3d9de">Calculate the logarithm</span></td>
+<td><details><summary><code>math.log(!fieldname!)</code></summary><img src="/images/15.png";></details></td>
+</tr>
+<tr>
+<td><span style="background-color: lightyellow">Round to 2 decimal places</span></td>
+<td><details><summary><code>round(!fieldname!, 2)</code></summary><img src="/images/16.png";></details></td>
+</tr>
+</tbody>
+</table>
+<h2 id="deal-with-geometries">Deal with geometries</h2>
+<hr />
+<h3 id="find-feature-extents">Find feature extents</h3>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th><h7>Code snippet<h8>--------------------------------------------</h8><h7></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Find the most extreme longitude</td>
+<td><details><summary><code>!shape.extent.XMax!</code></summary><img src="/images/17.png";></details></td>
+</tr>
+<tr>
+<td>Find the most extreme latitude</td>
+<td><details><summary><code>!shape.extent.YMax!</code></summary><img src="/images/18.png";></details></td>
+</tr>
+</tbody>
+</table>
+<h3 id="calculate-line-lengths">Calculate line lengths</h3>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th><h7>Code snippet<h8>----------------------------------------------------------</h8><h7></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Calculate feature length in map units</td>
+<td><details><summary><code>!shape.length!</code></summary><img src="/images/19.png";></details></td>
+</tr>
+<tr>
+<td>Calculate feature length in feet</td>
+<td><details><summary><code>!shape.length@feet!</code></summary><img src="/images/20.png";></details></td>
+</tr>
+<tr>
+<td>Calculate feature length in geodesic feet</td>
+<td><details><summary><code>!shape.length@Geodesicfeet!</code></summary><img src="/images/21.png";></details></td>
+</tr>
+</tbody>
+</table>
+<h3 id="compute-shape-areas">Compute shape areas</h3>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th><h7>Code snippet<h8>---------------------------------------------------------------------</h8><h7></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Calculate feature area in map units</td>
+<td><details><summary><code>!shape.area!</code></summary><img src="/images/22.png";></details></td>
+</tr>
+<tr>
+<td>Calculate feature area in square feet</td>
+<td><details><summary><code>!shape.area@squarefeet!</code></summary><img src="/images/23.png";></details></td>
+</tr>
+<tr>
+<td>Calculate feature area in geodesic square feet</td>
+<td><details><summary><code>!shape.area@Geodesicsquarefeet!</code></summary><img src="/images/24.png";></details></td>
+</tr>
+</tbody>
+</table>
+<h2 id="further-reading">Further reading</h2>
+<p>You can perform more advanced calculations with the <a href="http://pro.arcgis.com/en/pro-app/tool-reference/data-management/calculate-field-examples.htm#ESRI_SECTION1_DF13F7EE4AF345CAAA46C1CFA2F7BFE1">code block</a> in the Field Calculator. Check out <a href="http://pro.arcgis.com/en/pro-app/tool-reference/data-management/calculate-field-examples.htm#ESRI_SECTION1_11EAB368A53B4D1C9618A58A1B09F9D0">some</a> <a href="http://pro.arcgis.com/en/pro-app/tool-reference/data-management/calculate-field-examples.htm#ESRI_SECTION1_F3F8CD77A9F647ABBA678A76ADB86E15">examples</a> in the official Esri documentation.</p>
+<p>Shitij Mehta <a href="https://blogs.esri.com/esri/arcgis/2011/06/06/modelbuilderifthenelse1/">wrote a blog series</a> on if-then-else statements that you can apply to field calculations.</p>
+<p>David Verbyla made <a href="https://www.youtube.com/watch?v=gvB4GjLcEcg">a video</a> on Python functions for the Field Calculator.</p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="./js/jquery-1.10.2.min.js"></script>
+    <script src="./js/bootstrap-3.0.3.min.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '.';
+    </script>
+    <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
+    <script src="./js/base.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>
+
+<!--
+MkDocs version : 0.16.3
+Build Date UTC : 2017-09-25 01:14:19
+-->

@@ -1,7 +1,0 @@
-site_name: tabular - review GIS field calculations
-theme_dir: cinder
-site_favicon: favicon.ico
-pages:
-- Docs: index.md
-- Sandbox: sandbox.md
-- <i class="fa fa-cloud-download" aria-hidden="true"></i> Cheatsheet: cheatsheet/cheatsheet.pdf.pdf

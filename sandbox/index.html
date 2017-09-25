@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <title>Sandbox - tabular - review GIS field calculations</title>
+
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
+
+    
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!---->
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!---->
+
+            <!-- Main title -->
+            <a class="navbar-brand" href=".."><h10>tabular</h10></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!---->
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                <!---->
+                    <li >
+                        <a href="..">Docs</a>
+                    </li>
+                <!---->
+                
+                <!---->
+                    <li class="active">
+                        <a href="./">Sandbox</a>
+                    </li>
+                <!---->
+                
+                </ul>
+            <!---->
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <!--
+                    <li >
+                        <a rel="next" href="..">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="prev" >
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                -->
+                <li>
+                    <a href="https://github.com/soyrice"><i class="fa fa-github"></i> Github</a>
+                </li>
+                <!---->
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#test-your-python-expressions">Test your Python expressions</a></li>
+        
+            <li class="second-level"><a href="#play-in-the-sandbox">Play in the sandbox</a></li>
+            
+        
+    
+        <li class="first-level "><a href="#transition-to-arcgis">Transition to ArcGIS</a></li>
+        
+            <li class="second-level"><a href="#test-python-code-blocks">Test Python code blocks</a></li>
+            
+        
+            <li class="second-level"><a href="#learn-more-about-python">Learn more about Python</a></li>
+            
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h2 id="test-your-python-expressions">Test your Python expressions</h2>
+<p>Try field calculations without editing your data. Use the interactive console below to input a string or numeric field value. Then enter a field calculation to see what happens.</p>
+<h3 id="play-in-the-sandbox">Play in the sandbox</h3>
+<p><iframe src="https://trinket.io/embed/python/516a991bc4?outputOnly=true&start=result" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></p>
+<h2 id="transition-to-arcgis">Transition to ArcGIS</h2>
+<p>After you use the sandbox, bring your skills to the Field Calculator. But be careful: field calculations will permenently alter your data. It's good practice to have a back-up copy and perform all field calculations in a <a href="../desktop.arcgis.com/en/arcmap/10.3/manage-data/tables/adding-fields.htm">brand new field</a>.</p>
+<p>You can test your code in 'main.py' before using the Field Calculator. Press the <img src="/images/play.png";> play button to try your expression.</p>
+<iframe src="https://trinket.io/embed/python/cd51166fa2?start=result" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+<p><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <em>Note:</em> 
+The sandbox supports Python expressions, but the Field Calculator in ArcMap also supports <a href="http://support.esri.com/en/technical-article/000008920">VB Script</a>. In ArcGIS Pro, the Calculator Field tool supports Python, VBA, and <a href="https://developers.arcgis.com/arcade/">Arcade</a> expressions. </p>
+<h3 id="test-python-code-blocks">Test Python code blocks</h3>
+<p>The Calculate Field tool supports <a href="http://pro.arcgis.com/en/pro-app/tool-reference/data-management/calculate-field-examples.htm#ESRI_SECTION1_11EAB368A53B4D1C9618A58A1B09F9D0">logical</a> and <a href="http://pro.arcgis.com/en/pro-app/tool-reference/data-management/calculate-field-examples.htm#ESRI_SECTION1_F3F8CD77A9F647ABBA678A76ADB86E15">accumulative</a> functions, which are common advanced techniques. Experiment with the examples in <code>logical.py</code> and <code>accumulate.py</code> above.</p>
+<h3 id="learn-more-about-python">Learn more about Python</h3>
+<p>Python is the language of GIS. If you can do it with Python, you can do it in the Field Calculator. Check out these resources to develop your Python skills and learn more about Python scripting for spatial analysis.</p>
+<table>
+<thead>
+<tr>
+<th>Time commitment</th>
+<th>Resource</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Least involved</td>
+<td><span style="background-color: #FFFCFC">Download an Esri <a href="chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://www.esri.com/news/arcuser/0507/files/pythonscript.pdf">cheat sheet</a> of advanced logial functions for the Field Calculator</span></td>
+</tr>
+<tr>
+<td><span style="color: transparent">-</span></td>
+<td><span style="background-color: #FFEEED">Review the <a href="https://docs.python.org/3/">the offical Python docs</a> when you know of a Python tool but want to learn how to use it</span></td>
+</tr>
+<tr>
+<td><span style="color: transparent">-</span></td>
+<td><span style="background-color: #fbd5d4">Check out <a href="https://www.youtube.com/channel/UCjGzNLUkTOFzWdD_5MzNIqg/videos">Python for ArcGIS</a>, a free YouTube series from the University of Alaska</span></td>
+</tr>
+<tr>
+<td><span style="color: transparent">-</span></td>
+<td><span style="background-color: #D89F9D; color: white">Try out the exercises in Paul Zandbergen's how-to book, <a href="http://esripress.esri.com/bookResources/index.cfm?event=catalog.book&id=9/" style="color: #A9CDE9">Python Scripting for ArcGIS</span></td>
+</tr>
+<tr>
+<td><span style="color: transparent">-</span></td>
+<td><span style="background-color: #B66D6B; color: white">Dive into Python scripting for spatial analysis with the lessons and tutorials in <a href="https://www.esri.com/training/catalog/57630436851d31e02a43f13c/python-for-everyone/" style="color: #A9CDE9">Python for Everyone</a>, a free training by Esri</span></td>
+</tr>
+<tr>
+<td>Most involved</td>
+<td><span style="background-color: #A96260; color: white">Learn Python from scratch with interactive tutorials on <a href="https://www.codecademy.com/learn/learn-python" style="color: #A9CDE9">Codeacademy</a></span></td>
+</tr>
+</tbody>
+</table></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '..';
+    </script>
+    <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+    <script src="../js/base.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+
+</html>
