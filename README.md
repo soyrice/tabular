@@ -25,7 +25,9 @@ Try your own Python expressions and see what will happen to your data:
 Start at the [Docs](https://soyrice.github.io/tabular) page. Depending on the data type of the field you’ll manipulate, find the appropriate section:
 
 (1) [Text](https://soyrice.github.io/tabular/#edit-some-text)
+
 (2) [Numeric](https://soyrice.github.io/tabular/#do-some-math)
+
 (3) [Geometric](https://soyrice.github.io/tabular/#deal-with-geometries)
 
 Then check out the examples in the section and find the most relevant code snippet.
@@ -37,7 +39,7 @@ Start in the [sandbox](https://soyrice.github.io/tabular/sandbox):
 (2) Modify the expression in the [Python editor](https://soyrice.github.io/tabular/sandbox/#transition-to-arcgis). Make changes, press play, and check the output to the right of your code.
 
 ## Issues
-
-## Contributors
+Find a bug or want to request a new feature? Please let us know by submitting an issue.
 
 ## License
+Licensed under the MIT license. A copy of the license is available in the repository's LICENSE.txt file.
