@@ -36,6 +36,7 @@ Then check out the examples in the section and find the most relevant code snipp
 Start in the [sandbox](https://soyrice.github.io/tabular/sandbox):
 
 (1) Enter one of your field values into the [Python console](https://soyrice.github.io/tabular/sandbox/#play-in-the-sandbox). Which expression brings you closest to what you want?
+
 (2) Modify the expression in the [Python editor](https://soyrice.github.io/tabular/sandbox/#transition-to-arcgis). Make changes, press play, and check the output to the right of your code.
 
 ## Issues
