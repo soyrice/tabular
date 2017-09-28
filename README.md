@@ -7,21 +7,23 @@ Use tabular to learn spatial analysis. If you’re new to GIS or Python, use tab
 ### Copy-and-paste Python snippets
 Copy, paste, and modify the Python snippets in the documentation. Tabular contains 24 of the most common Python functions for data manipulation in spatial analysis.
 
-![Python functions](https://user-images.githubusercontent.com/22160049/30943412-d9376aca-a3be-11e7-9b2a-a4504deb4197.png?s=20)
+<img width="500" alt="Python functions" src="https://user-images.githubusercontent.com/22160049/30943412-d9376aca-a3be-11e7-9b2a-a4504deb4197.png">
 
 ### Step through the ArcGIS® GUI
 Walk through the Field Calculator step by step. Tabular includes screenshots of the field calculator with step-by-step directions that show you how to implement each of the 24 Python snippets.
 
-![Step-by-step screenshots](https://user-images.githubusercontent.com/22160049/30943423-eef84906-a3be-11e7-8051-c3f100a4d663.png){:height="20%" width="20%"}
+<img width="500" alt="Step-by-step screenshot" src="https://user-images.githubusercontent.com/22160049/30943423-eef84906-a3be-11e7-8051-c3f100a4d663.png">
 
 ### Test your Python code before altering your data
 Practice in the tabular [sandboxes](https://soyrice.github.io/tabular/sandbox) before altering your data in ArcGIS. Field calculations permanently alter your data, so you can try new Python expressions in tabular without risk.
 
-Review how your specific field values with change in the Field Calculator:
-[screenshot of entering values]
+Review how your particular field values with change in the Field Calculator:
+
+<img width="500" alt="Enter values" src="https://user-images.githubusercontent.com/22160049/30943646-5cd9b6d4-a3c0-11e7-8810-81710889fc28.png">
 
 Try your own Python expressions and see what will happen to your data:
-[screenshot of example code block and results]
+
+<img width="500" alt="Custom expression" src="https://user-images.githubusercontent.com/22160049/30943662-71c2fc36-a3c0-11e7-917e-f6733c065a92.png">
 
 ## I need to do field calculations but I'm not sure where to start?
 Start at the [Docs](https://soyrice.github.io/tabular) page. Depending on the data type of the field you’ll manipulate, find the appropriate section:
