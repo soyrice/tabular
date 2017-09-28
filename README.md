@@ -6,11 +6,11 @@ Use tabular to learn spatial analysis. If you’re new to GIS or Python, use tab
 
 ### Copy-and-paste Python snippets
 Copy, paste, and modify the Python snippets in the documentation. Tabular contains 24 of the most common Python functions for data manipulation in spatial analysis.
-[screenshot of page w/ code highlighted]
-[cropped screenshot of snippet highlighted in field calc]
+![Python functions](https://user-images.githubusercontent.com/22160049/30943412-d9376aca-a3be-11e7-9b2a-a4504deb4197.png)
 
 ### Step through the ArcGIS® GUI
 Walk through the Field Calculator step by step. Tabular includes screenshots of the field calculator with step-by-step directions that show you how to implement each of the 24 Python snippets.
+![Step-by-step screenshots](https://user-images.githubusercontent.com/22160049/30943423-eef84906-a3be-11e7-8051-c3f100a4d663.png)
 
 ### Test your Python code before altering your data
 Practice in the tabular [sandboxes](https://soyrice.github.io/tabular/sandbox) before altering your data in ArcGIS. Field calculations permanently alter your data, so you can try new Python expressions in tabular without risk.
